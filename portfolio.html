@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isaac Ngian Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday-professional: a student engineer showing an interviewer his evidence
+   IDEA an aircraft maintenance work card: tidy fields, task references, sign-off boxes
+   PICTURE a turbofan engine cut-away, airflow moving through fan, compressor, combustor, turbine
+   COLOUR white ground, ink #101820, steel blue #1f4e7a, hi-vis orange #ff6a13 accent
+   TYPE Barlow Condensed 700 + Barlow
+   LAYOUT laptop: name across top, engine full width beneath; phone: name, engine, contact */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0e141b);--ink:light-dark(#101820,#e9eef3);--mute:light-dark(#4a5866,#a7b3bf);--blue:light-dark(#1f4e7a,#7fb0de);--band:light-dark(#eef3f8,#16202b);--line:light-dark(#cfd9e3,#2b3947);--org:#ff6a13;--metal:light-dark(#9aa9b8,#5d6e80);--metal2:light-dark(#c9d3dd,#3a4a5a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Barlow,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Barlow Condensed",Barlow,sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+a{color:var(--blue)}
+.band{padding-block:clamp(28px,4vw,60px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1200px;margin:0 auto}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px 18px;align-items:center;flex-wrap:wrap;padding:10px max(5vw,16px)}
+nav b{font-family:"Barlow Condensed",sans-serif;font-size:20px;margin-right:auto}
+nav a{text-decoration:none;color:var(--ink);font-weight:500;padding:8px 2px;min-height:44px;display:inline-flex;align-items:center}
+nav a:hover,nav a:focus-visible{color:var(--org)}
+.hero{background:var(--band)}
+.top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:end}
+.hero h1{font-size:clamp(44px,7vw,80px)}
+.role{font-size:20px;color:var(--mute);margin:10px 0 0;max-width:34em}
+.role strong{color:var(--ink)}
+.contact{display:grid;gap:6px;font-size:16px}
+.contact div{display:flex;gap:10px;flex-wrap:wrap}
+.contact span{color:var(--mute);width:5.5em;flex:none}
+.contact a,.contact em{font-style:normal;overflow-wrap:anywhere}
+.fig{margin-top:28px}
+.fig svg{width:100%;height:auto;display:block}
+.flow{stroke:var(--org);stroke-width:3;stroke-dasharray:10 16;fill:none;animation:flow 1.6s linear infinite;opacity:.9}
+@keyframes flow{to{stroke-dashoffset:-52}}
+@media(prefers-reduced-motion:reduce){.flow{animation:none}}
+.lbl{font:600 15px Barlow,sans-serif;fill:var(--ink)}
+.cap{font-size:14px;color:var(--mute);margin:6px 0 0}
+h2{font-size:clamp(32px,4vw,44px);margin-bottom:8px}
+.lead{color:var(--mute);max-width:46em;margin:0 0 24px}
+.card{border:1px solid var(--line);border-radius:6px;background:var(--bg)}
+.fit{display:grid;gap:14px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.row .need{background:var(--band);padding:16px 18px;border-right:3px solid var(--org)}
+.row .need small{display:block;color:var(--mute);font-size:13px;margin-bottom:2px}
+.row .need b{font-weight:600}
+.row .have{padding:16px 18px}
+.row .have ul{margin:0;padding-left:1.1em}
+.row .have li+li{margin-top:4px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.card{padding:20px 22px}
+.card h3{font-size:26px}
+.when{color:var(--mute);font-size:15px;margin:2px 0 10px;white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:12px 0 0;list-style:none}
+.tags li{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:15px}
+.card ul{margin:8px 0 0;padding-left:1.1em}
+.grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:10px;margin-top:12px}
+.grades div{background:var(--band);border-radius:6px;padding:10px 12px}
+.grades b{font-family:"Barlow Condensed",sans-serif;font-size:28px;color:var(--blue);display:block;line-height:1}
+.grades span{font-size:14px;color:var(--mute)}
+.star{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.star div{background:var(--band);border-radius:6px;padding:12px}
+.star b{display:block;color:var(--org);font-family:"Barlow Condensed",sans-serif;font-size:20px}
+.star p{margin:4px 0 0;font-size:15px}
+.alt{background:var(--band)}
+footer{background:#101820;color:#e9eef3}
+footer a{color:#ffb38a}
+footer h2{color:#fff}
+.sign{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:14px}
+@media(max-width:820px){.top,.grid2{grid-template-columns:minmax(0,1fr)}.star{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.row{grid-template-columns:minmax(0,1fr)}.row .need{border-right:0;border-bottom:3px solid var(--org)}.when{white-space:normal}.lbl{font-size:22px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Isaac Ngian</b><a href="#fit">Fit for the role</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#awards">Awards</a></div></nav>
+
+<header class="band hero">
+ <div class="wrap">
+  <div class="top">
+   <div>
+    <h1>Isaac Ngian Zi Ian</h1>
+    <p class="role">Diploma in Aerospace Engineering student, Temasek Polytechnic. Applying for the <strong>Assistant Engineer (Airframe &amp; Engine) internship</strong> at ST Engineering Aerospace, Changi.</p>
+   </div>
+   <div class="contact">
+    <div><span>Email</span><a href="mailto:hexolga@gmail.com">hexolga@gmail.com</a></div>
+    <div><span>Phone</span><em>8778 0965</em></div>
+    <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/isaac-ngian-b48730339/">linkedin.com/in/isaac-ngian-b48730339</a></div>
+    <div><span>Graduating</span><em>April 2028</em></div>
+   </div>
+  </div>
+  <div class="fig" aria-label="Cut-away drawing of a turbofan engine showing the systems Isaac has studied">
+   <svg viewBox="0 0 900 330" role="img">
+    <defs>
+     <linearGradient id="cas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--metal2)"/><stop offset="1" stop-color="var(--metal)"/></linearGradient>
+     <linearGradient id="hot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#ff6a13"/></linearGradient>
+    </defs>
+    <!-- nacelle -->
+    <path d="M60 40 Q90 26 160 28 L700 50 Q760 56 800 92 L800 108 L700 84 L160 66 Q110 66 72 78 Z" fill="url(#cas)"/>
+    <path d="M60 250 Q90 264 160 262 L700 240 Q760 234 800 198 L800 182 L700 206 L160 224 Q110 224 72 212 Z" fill="url(#cas)"/>
+    <!-- core casing -->
+    <path d="M230 110 L560 118 L640 128 L760 140 L760 150 L640 140 L560 132 L230 126 Z" fill="var(--metal)"/>
+    <path d="M230 180 L560 172 L640 162 L760 150 L760 140 L640 150 L560 158 L230 164 Z" fill="var(--metal)" opacity=".85"/>
+    <!-- shaft -->
+    <rect x="120" y="141" width="660" height="8" rx="4" fill="var(--ink)" opacity=".55"/>
+    <!-- spinner -->
+    <path d="M96 145 Q100 118 136 112 L136 178 Q100 172 96 145 Z" fill="var(--ink)" opacity=".8"/>
+    <!-- fan -->
+    <g id="fan"></g>
+    <!-- compressor stages -->
+    <g id="comp"></g>
+    <!-- combustor -->
+    <rect x="455" y="128" width="86" height="34" rx="12" fill="url(#hot)"/>
+    <!-- turbine stages -->
+    <g id="turb"></g>
+    <!-- airflow -->
+    <path class="flow" d="M20 100 H230 Q300 100 360 132 H780 Q830 132 880 145"/>
+    <path class="flow" d="M20 190 H230 Q300 190 360 158 H780 Q830 158 880 145"/>
+    <path class="flow" d="M20 60 H700 Q760 66 880 110" style="opacity:.45"/>
+    <path class="flow" d="M20 230 H700 Q760 224 880 180" style="opacity:.45"/>
+    <!-- labels -->
+    <g class="lbl">
+     <line x1="150" y1="270" x2="150" y2="296" stroke="var(--line)"/><text x="150" y="316" text-anchor="middle">Fan</text>
+     <line x1="330" y1="180" x2="330" y2="296" stroke="var(--line)"/><text x="330" y="316" text-anchor="middle">Compressor</text>
+     <line x1="498" y1="166" x2="498" y2="296" stroke="var(--line)"/><text x="498" y="316" text-anchor="middle">Combustor</text>
+     <line x1="610" y1="170" x2="610" y2="296" stroke="var(--line)"/><text x="610" y="316" text-anchor="middle">Turbine</text>
+     <line x1="770" y1="210" x2="770" y2="296" stroke="var(--line)"/><text x="770" y="316" text-anchor="middle">Nozzle</text>
+    </g>
+   </svg>
+   <p class="cap">The gas turbine systems I studied in my diploma modules, from intake to exhaust.</p>
+  </div>
+ </div>
+</header>
+
+<section class="band" id="fit">
+ <div class="wrap">
+  <h2>How I match the job</h2>
+  <p class="lead">Each requirement from the ST Engineering job advertisement, next to the evidence I can bring.</p>
+  <div class="fit" id="fitList"></div>
+ </div>
+</section>
+
+<section class="band alt" id="skills">
+ <div class="wrap grid2">
+  <div class="card">
+   <h3>Technical skills</h3>
+   <ul>
+    <li>Explaining how gas turbine engine systems work: compressor, turbine, lubrication, ignition and fuel systems</li>
+    <li>Using thrust equations and efficiency calculations to analyse jet engine performance</li>
+    <li>Applying non-destructive testing methods to detect defects, corrosion and fatigue in aircraft materials</li>
+    <li>Writing structured failure analysis reports on compressor stall and turbine blade fatigue fracture</li>
+   </ul>
+  </div>
+  <div class="card">
+   <h3>Generic skills</h3>
+   <ul>
+    <li>Friendly, accurate customer service through patience and clear communication, in English and Chinese</li>
+    <li>Teamwork in group reports and competitions, delivering shared work that met team goals</li>
+    <li>Attention to detail and a quality mindset: checking calculations, figures and references in technical reports</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="experience">
+ <div class="wrap">
+  <h2>Experience</h2>
+  <p class="lead">Work and competitions, told the way I would explain them in an interview.</p>
+  <div class="grid2">
+   <div class="card">
+    <h3>Barista, KOI Thé</h3>
+    <p class="when">Dec 2023 to Mar 2024</p>
+    <ul>
+     <li>Took orders accurately and recommended drinks in English and Chinese</li>
+     <li>Followed the SOP at every step so drink quality stayed consistent</li>
+     <li>Handled multiple orders at once during peak hours, keeping queues short</li>
+    </ul>
+    <div class="star">
+     <div><b>Situation</b><p>Peak-hour rush, long queue</p></div>
+     <div><b>Task</b><p>Serve fast without errors</p></div>
+     <div><b>Action</b><p>Stuck to the SOP, confirmed each order</p></div>
+     <div><b>Result</b><p>Consistent drinks, shorter queues</p></div>
+    </div>
+   </div>
+   <div class="card">
+    <h3>Singapore Amazing Flying Machine Competition</h3>
+    <p class="when">Participant, 2022 and 2023</p>
+    <ul>
+     <li>National flying machine competition with a team</li>
+     <li>Early hands-on exposure to aerodynamic design and flight</li>
+    </ul>
+    <h3 style="margin-top:20px">FIRST LEGO League</h3>
+    <p class="when">Participant, 2023</p>
+    <ul>
+     <li>Built and programmed a robot to complete set challenges</li>
+     <li>Solved problems as a team in a STEM robotics competition</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="band alt" id="education">
+ <div class="wrap grid2">
+  <div class="card">
+   <h3>Diploma in Aerospace Engineering</h3>
+   <p class="when">Temasek Polytechnic, Apr 2025 to Apr 2028</p>
+   <ul class="tags">
+    <li>Gas Turbine Engine</li><li>Fluid Mechanics</li><li>Engineering Materials</li><li>Propulsion and Dynamics</li><li>Electromagnetics</li><li>Non-Destructive Testing</li>
+   </ul>
+  </div>
+  <div class="card">
+   <h3>GCE O Levels</h3>
+   <p class="when">Meridian Secondary School, 2021 to 2024</p>
+   <div class="grades">
+    <div><b>B3</b><span>Elementary Mathematics</span></div>
+    <div><b>B3</b><span>Additional Mathematics</span></div>
+    <div><b>B3</b><span>Pure Physics</span></div>
+    <div><b>B3</b><span>Pure Chemistry</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="awards">
+ <div class="wrap grid2">
+  <div class="card">
+   <h3>Edusave Good Progress Award</h3>
+   <p class="when">Meridian Secondary School, 2022</p>
+   <p>For good improvement in academic performance and good conduct.</p>
+  </div>
+  <div class="card">
+   <h3>Edusave Award for Achievement, Good Leadership and Service (EAGLES)</h3>
+   <p class="when">2019</p>
+   <p>For leadership, service to the school and community, good conduct and academic performance.</p>
+  </div>
+ </div>
+</section>
+
+<footer class="band">
+ <div class="wrap">
+  <h2>Let's talk</h2>
+  <p>I'm looking for an internship where I can apply what I've learned about engines and inspection on real aircraft, and learn from experienced engineers.</p>
+  <div class="sign">
+   <a href="mailto:hexolga@gmail.com">hexolga@gmail.com</a>
+   <span>8778 0965</span>
+   <a href="https://www.linkedin.com/in/isaac-ngian-b48730339/">LinkedIn profile</a>
+  </div>
+ </div>
+</footer>
+
+<script>
+{
+ const fit=[
+  ["Responsibility","Support inspections and servicing of airframes and engine components",["Studied gas turbine engines module: compressor, turbine, lubrication, ignition and fuel systems","Hands-on aerodynamic design and flight exposure through SAFMC"]],
+  ["Responsibility","Help diagnose faults and carry out corrective actions",["Applied non-destructive testing to find defects, corrosion and fatigue","Wrote structured failure analysis reports on compressor stall and turbine blade fatigue fracture"]],
+  ["Responsibility","Document maintenance work accurately for compliance",["Checked calculations, figures and references in technical reports","Followed SOPs step by step at KOI Thé for consistent quality"]],
+  ["Skill","Strong analytical and problem-solving skills with attention to detail",["Used thrust equations and efficiency calculations to analyse engine performance","Built and programmed a robot to solve set challenges in FIRST LEGO League"]],
+  ["Skill","Communication and working in a diverse team",["Served customers in English and Chinese","Delivered shared work in group reports and two national competitions"]],
+  ["Skill","Commitment to safety, quality and regulations",["SOP discipline from food and beverage work","Used NDT to catch defects, corrosion and fatigue before they become safety risks"]],
+  ["Skill","Proactive learning in a fast-paced environment",["Managed several orders at once during peak hours","Pursued aeronautics interest early through SAFMC, before polytechnic"]]
+ ];
+ const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ document.getElementById("fitList").innerHTML=fit.map(([k,n,h])=>`<div class="row"><div class="need"><small>${k}</small><b>${esc(n)}</b></div><div class="have"><ul>${h.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div>`).join("");
+
+ const NS="http://www.w3.org/2000/svg";
+ const mk=(g,tag,a)=>{const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);g.appendChild(e);return e};
+ const fan=document.getElementById("fan");
+ for(let i=0;i<5;i++){const x=142+i*7;mk(fan,"path",{d:`M${x} 72 Q${x+14} 145 ${x} 218 L${x+5} 218 Q${x+19} 145 ${x+5} 72 Z`,fill:"var(--blue)",opacity:String(1-i*.12)})}
+ const comp=document.getElementById("comp");
+ for(let i=0;i<10;i++){const x=245+i*20,h=30-i*1.6;mk(comp,"rect",{x,y:145-h,width:8,height:h*2,rx:2,fill:"var(--blue)",opacity:i%2?".65":"1"})}
+ const turb=document.getElementById("turb");
+ for(let i=0;i<5;i++){const x=560+i*22,h=16+i*3;mk(turb,"rect",{x,y:145-h,width:9,height:h*2,rx:2,fill:i<2?"#c2410c":"var(--metal)"})}
+}
+</script>
+</body>
+</html>
